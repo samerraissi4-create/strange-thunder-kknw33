@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fleet AI Trading System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="nav-brand">
+          <h1>🚀 Fleet AI</h1>
+          <span class="status-indicator online"></span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link active">Dashboard</a>
+          <a href="bots.html" class="nav-link">Bots</a>
+          <a href="analytics.html" class="nav-link">Analytics</a>
+          <a href="settings.html" class="nav-link">Settings</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+          <h2>AI Trading Dashboard</h2>
+          <div class="header-actions">
+            <button
+              class="btn btn-primary"
+              onclick="tradingEngine.startAllBots()"
+            >
+              Start All Bots
+            </button>
+            <button
+              class="btn btn-danger"
+              onclick="tradingEngine.stopAllBots()"
+            >
+              Emergency Stop
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Total Profit</h3>
+            <div class="stat-value" id="totalProfit">$0.00</div>
+            <div class="stat-change positive">+0%</div>
+          </div>
+          <div class="stat-card">
+            <h3>Active Bots</h3>
+            <div class="stat-value" id="activeBots">0/5</div>
+            <div class="stat-change">Online</div>
+          </div>
+          <div class="stat-card">
+            <h3>Success Rate</h3>
+            <div class="stat-value" id="successRate">0%</div>
+            <div class="stat-change positive">+0%</div>
+          </div>
+          <div class="stat-card">
+            <h3>AI Confidence</h3>
+            <div class="stat-value" id="aiConfidence">0%</div>
+            <div class="stat-change">Analyzing</div>
+          </div>
+        </div>
+
+        <!-- Bots Grid -->
+        <div class="section">
+          <h3>AI Trading Bots</h3>
+          <div class="bots-grid" id="botsGrid">
+            <!-- Bots will be loaded here -->
+          </div>
+        </div>
+
+        <!-- Trading Charts -->
+        <div class="charts-grid">
+          <div class="chart-container">
+            <h4>Performance Overview</h4>
+            <canvas id="performanceChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <h4>Risk Analysis</h4>
+            <canvas id="riskChart"></canvas>
+          </div>
+        </div>
+
+        <!-- AI Agent Activity -->
+        <div class="section">
+          <h3>AI Agent Decisions</h3>
+          <div class="ai-activity" id="aiActivity">
+            <div class="activity-item">
+              <span class="activity-time">Just now</span>
+              <span class="activity-message">AI System Initialized</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Market Data -->
+        <div class="section">
+          <h3>Live Market Data</h3>
+          <div class="market-data" id="marketData">
+            <!-- Market data will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="data-manager.js"></script>
+    <script src="trading-engine.js"></script>
+    <script src="ai-agent.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

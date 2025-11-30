@@ -1,0 +1,9 @@
+// In package.json - add any npm package
+{
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "axios": "^1.0.0",
+    "lodash": "^4.17.21"
+  }
+}
